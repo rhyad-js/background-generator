@@ -12,9 +12,10 @@ const setGradient = () => {
 const randomGenerate = () => {
 	let randomColor1 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
 	let randomColor2 = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+	body.style.background = `linear-gradient(to right,${randomColor1}, ${randomColor2})`;
+	cssCode.textContent = body.style.background;
 	color1.value = randomColor1;
 	color2.value = randomColor2;
-	body.style.background = `linear-gradient(to right,${randomColor1}, ${randomColor2})`;
 }
 
 color1.addEventListener("input", setGradient);
